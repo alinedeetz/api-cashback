@@ -19,4 +19,4 @@ class Order(models.Model):
 
     @property
     def cashback(self):
-        return self.product * 0.1
+        return self.product.price * 0.1
