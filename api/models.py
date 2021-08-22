@@ -10,3 +10,13 @@ class Client(models.Model):
 class Product(models.Model):
     product = models.CharField(max_length=50, blank=True, null=True)
     price = models.IntegerField()
+
+
+class Order(models.Model):
+    client = models.ForeignKey(Client, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    # cashback = models.FloatField()
+
+    @property
+    def cashback(self):
+        return self.product * 0.1
