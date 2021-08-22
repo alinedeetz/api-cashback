@@ -6,3 +6,7 @@ class Client(models.Model):
     last_name = models.CharField(max_length=50, blank=True, null=True)
     adress = models.CharField(max_length=50)
     email = models.EmailField(default='default@default.com')
+
+class Product(models.Model):
+    product = models.CharField(max_length=50, blank=True, null=True)
+    price = models.IntegerField()
