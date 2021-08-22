@@ -16,7 +16,7 @@ class ProductSerializer(serializers.ModelSerializer):
 class OrderSerializer(serializers.ModelSerializer):
     class Meta:
         model = Order
-        fields = '__all__'
+        fields = ['id', 'client', 'product', 'qty', 'cashback']
 
 class CashbackSerializer(serializers.ModelSerializer):
     class Meta:
