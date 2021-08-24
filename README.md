@@ -2,4 +2,16 @@
 
  # Python Wallet - Cashback
 
-This is a API made using Python and Django REST Framework,
+Essa é uma API feita utilizando Python e DJango REST Framework. 
+
+Sua principal funcionalidade envolve receber dados de um cliente e sua respectiva compra, calcular o valor de cashback que esse cliente deve receber e enviar essa informação para uma API externa - que irá processar o pagamento do valor do benefício. 
+
+Para utilizá-la, é necessária a autenticação do usuário. Um usuário pode ser criado atráves do seguinte comando:
+
+>$ python manage.py createsuperuser
+
+# How to run 
+
+>$ python manage.py runserver
+
+
