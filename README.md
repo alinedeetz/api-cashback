@@ -10,21 +10,19 @@ Sua principal funcionalidade envolve receber dados de um cliente e sua respectiv
 Para utilizá-la, é necessário que o usuário esteja autenticado.
 
 
-### Instalando os requisitos 
+#### Instalando os requisitos 
 
 >$ pip install -r requirements.txt
 
-### Criando um usuário
+#### Criando um usuário
 
 >$ python manage.py createsuperuser
 
-### Realizando as migrações
+#### Realizando as migrações
 
->$ python manage.py makemigrations
 >$ python manage.py migrate 
 
-
-### Rodando a aplicação
+#### Rodando a aplicação
 
 >$ python manage.py runserver
 
