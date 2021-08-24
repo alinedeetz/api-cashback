@@ -1,12 +1,18 @@
 from django.shortcuts import render
-from rest_framework import viewsets, generics
+from rest_framework import viewsets, generics, status
 from rest_framework.response import Response
-from rest_framework.decorators import action
+from rest_framework.decorators import action, api_view, permission_classes
+from rest_framework.permissions import IsAuthenticated
 from .models import Client, Product, Order
-from .serializers import CashbackSerializer, ClientSerializer, ProductSerializer, OrderSerializer
+from .serializers import *
 import requests
 
 # Create your views here.
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def restricted(request, *args, **kwargs):
+    return Response(data='Only for Logged in User')
 
 class ClientViewSet(viewsets.ModelViewSet):
     serializer_class = ClientSerializer
@@ -36,3 +42,4 @@ class OrderViewSet(viewsets.ModelViewSet):
         else:
             response = Response({'status': 'Error while requesting cashback', 'error': r.text}, status=500)
         return response
+

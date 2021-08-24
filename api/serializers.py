@@ -1,7 +1,11 @@
 from rest_framework import routers, serializers, viewsets
-from .models import Client, Product, Order
+from .models import *
+from djoser.serializers import UserCreateSerializer, UserSerializer
 
-
+class UserSerializer(UserCreateSerializer):
+    class Meta(UserCreateSerializer.Meta):
+        model = User
+        fields = ('__all__')
 
 class ClientSerializer(serializers.ModelSerializer):
     class Meta:
