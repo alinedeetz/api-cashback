@@ -10,7 +10,7 @@ Para utilizá-la, é necessária a autenticação do usuário. Um usuário pode 
 
 >$ python manage.py createsuperuser
 
-# How to run 
+## Rodando a aplicação 
 
 >$ python manage.py runserver
 
