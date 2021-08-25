@@ -26,3 +26,8 @@ class CashbackSerializer(serializers.ModelSerializer):
     class Meta:
         model = Order
         fields = '__all__'
+
+class CashbackResponseSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CashbackResponse
+        fields = '__all__'

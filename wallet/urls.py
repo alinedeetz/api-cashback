@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from api.views import ClientViewSet, ProductViewSet, OrderViewSet
+from api.views import *
 
 from rest_framework import routers
 
@@ -24,6 +24,7 @@ router = routers.DefaultRouter()
 router.register(r'clients', ClientViewSet)
 router.register(r'products', ProductViewSet)
 router.register(r'orders', OrderViewSet)
+router.register(r'response', CashbackResponseViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),

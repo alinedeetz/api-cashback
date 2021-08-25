@@ -32,3 +32,7 @@ class Order(models.Model):
     def cashback(self):
         valor_total = self.product.price * self.qty
         return valor_total * 0.1
+
+class CashbackResponse(models.Model):
+    response = models.CharField(max_length=256)
+    order = models.ForeignKey(Order, on_delete=models.CASCADE)

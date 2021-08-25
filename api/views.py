@@ -3,7 +3,7 @@ from rest_framework import viewsets, generics, status
 from rest_framework.response import Response
 from rest_framework.decorators import action, api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
-from .models import Client, Product, Order
+from .models import *
 from .serializers import *
 import requests
 
@@ -41,5 +41,10 @@ class OrderViewSet(viewsets.ModelViewSet):
             response = Response({'status': 'Cashback requested successfully'})
         else:
             response = Response({'status': 'Error while requesting cashback', 'error': r.text}, status=500)
+        CashbackResponse.objects.create(response=r.text, order=order)
         return response
+
+class CashbackResponseViewSet(viewsets.ModelViewSet):
+    serializer_class = CashbackResponseSerializer
+    queryset = CashbackResponse.objects.all()
 
