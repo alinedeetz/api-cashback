@@ -14,17 +14,15 @@ Para utilizá-la, é necessário que o usuário esteja autenticado.
 
 >$ pip install -r requirements.txt
 
-#### Criando um usuário
-
->$ python manage.py createsuperuser
-
 #### Realizando as migrações
 
 >$ python manage.py migrate 
 
+#### Criando um usuário
+
+>$ python manage.py createsuperuser
+
+
 #### Rodando a aplicação
 
 >$ python manage.py runserver
-
-
-
