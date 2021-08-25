@@ -37,7 +37,7 @@ class OrderViewSet(viewsets.ModelViewSet):
             'cashback': cashback
         }
         r = requests.post(url, data=data)
-        if r.status_code == 200:
+        if r.status_code == 201:
             response = Response({'status': 'Cashback requested successfully'})
         else:
             response = Response({'status': 'Error while requesting cashback', 'error': r.text}, status=500)
